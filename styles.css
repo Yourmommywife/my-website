@@ -163,6 +163,8 @@ body {
 
 .carousel__item.active {
     display: flex;
+    opacity: 1;
+    transform: translateX(0); /* Osiguraj da aktivni slajd bude na sredini */
 }
 
 .products__text {
@@ -400,22 +402,22 @@ body {
 @keyframes slideInRight {
     0% {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(100%); /* Početna pozicija: skroz desno */
     }
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0); /* Ciljna pozicija: centar */
     }
 }
 
 @keyframes slideOutLeft {
     0% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0); /* Početna pozicija: centar */
     }
     100% {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-100%); /* Ciljna pozicija: skroz levo */
     }
 }
 
