@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirit Handmade - Prirodne Kreme</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <h1>Spirit Handmade</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">O nama</a></li>
+                    <li><a href="#products">Proizvodi</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Pretraga">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero__container">
+            <div class="hero__text">
+                <h2>Tvoja nega kože</h2>
+                <p>Naša biljna kozmetika pruža dubinsku negu i zaštitu, pomažući tvojoj koži da ostane zdrava i mladolika.</p>
+                <a href="#products" class="btn btn--primary">Pogledaj ponudu</a>
+            </div>
+            <div class="hero__image">
+                <img src="images/hero-image.jpg" alt="Prirodne kreme">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container products__container">
+            <div class="carousel">
+                <div class="carousel__item active" data-cream="regenerativna">
+                    <div class="products__text">
+                        <h2>Regenerativna</h2>
+                        <p>Podstiče regeneraciju kože, čini je glatkom, nahranjenom i podmlađenom.</p>
+                        <button class="btn btn--secondary">DODAJ U KORPU</button>
+                    </div>
+                    <div class="products__image">
+                        <img src="images/regenerativna.jpg" alt="Regenerativna krema">
+                    </div>
+                </div>
+                <!-- Ponoviti za ostale kreme -->
+                <div class="carousel__item" data-cream="hidratantna">
+                    <div class="products__text">
+                        <h2>Hidratantna</h2>
+                        <p>Održava hidrataciju kože, čineći je mekom i elastičnom.</p>
+                        <button class="btn btn--secondary">DODAJ U KORPU</button>
+                    </div>
+                    <div class="products__image">
+                        <img src="images/hidratantna.jpg" alt="Hidratantna krema">
+                    </div>
+                </div>
+                <!-- Dodajte još carousel__item divove za svaku kremu -->
+            </div>
+            <div class="carousel__controls">
+                <button class="carousel__control carousel__control--prev">&#10094;</button>
+                <button class="carousel__control carousel__control--next">&#10095;</button>
+            </div>
+            <div class="carousel__indicators">
+                <span class="carousel__indicator active" data-cream="regenerativna"></span>
+                <span class="carousel__indicator" data-cream="hidratantna"></span>
+                <!-- Dodajte još indikatora za svaku kremu -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <h2>Šta kažu naši kupci</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Ova krema je promenila moju kožu! Nikad nisam imala tako mekanu i sjajnu kožu."</p>
+                    <p><strong>- Jelena P.</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"Prirodni sastojci zaista čine razliku. Preporučujem svima!"</p>
+                    <p><strong>- Marko S.</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"Najbolja nega kože koju sam ikada probala. Hvala Spirit Handmade!"</p>
+                    <p><strong>- Ana M.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__logo-contact">
+                <h3>Spirit Handmade</h3>
+                <p>+381 63 331 737</p>
+                <p>spirit@lift.agency</p>
+            </div>
+            <div class="footer__links">
+                <h4>Brzi linkovi</h4>
+                <ul>
+                    <li><a href="#about">O nama</a></li>
+                    <li><a href="#products">Proizvodi</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com">TikTok</a></li>
+                </ul>
+            </div>
+            <div class="footer__subscribe">
+                <h4>Subscribe</h4>
+                <p>Obaveštenja o akcijama</p>
+                <form>
+                    <input type="email" placeholder="Vaš email">
+                    <button type="submit">Prijavi se</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>© 2024 Spirit Handmade. Sva prava zadržana.</p>
+            <p>Prirodni proizvodi</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
