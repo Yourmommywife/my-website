@@ -141,10 +141,6 @@ body {
     padding: 60px 0;
 }
 
-.products__container {
-    position: relative;
-}
-
 .carousel {
     overflow: hidden;
     position: relative;
@@ -156,6 +152,15 @@ body {
     flex-wrap: wrap;
 }
 
+.carousel__item.enter {
+    animation: slideInRight 0.8s forwards ease; /* Krema dolazi s desne strane */
+}
+
+.carousel__item.exit {
+    animation: slideOutLeft 0.8s forwards ease; /* Krema izlazi na levu stranu */
+}
+
+
 .carousel__item.active {
     display: flex;
 }
@@ -163,7 +168,14 @@ body {
 .products__text {
     flex: 1;
     max-width: 500px;
+    opacity: 0; /* Dodavanje početne nevidljivosti */
+    transition: opacity 0.8s ease; /* Dodavanje smooth tranzicije za tekst */
 }
+
+.carousel__item.active .products__text {
+    opacity: 1; /* Tekst postaje vidljiv kada je krema aktivna */
+}
+
 
 .products__text h2 {
     color: #8B5E3C;
@@ -188,7 +200,16 @@ body {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    opacity: 0; /* Dodavanje početne nevidljivosti */
+    transform: translateX(100%); /* Slika počinje van ekrana */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Smooth tranzicija */
 }
+
+.carousel__item.active .products__image img {
+    opacity: 1; /* Slika postaje vidljiva */
+    transform: translateX(0); /* Slika dolazi u poziciju */
+}
+
 
 .carousel__controls {
     position: absolute;
@@ -207,6 +228,15 @@ body {
     cursor: pointer;
     border-radius: 50%;
 }
+
+.carousel__control--prev {
+    left: -50px; /* Pomeranje strelice na levo */
+}
+
+.carousel__control--next {
+    right: -50px; /* Pomeranje strelice na desno */
+}
+
 
 .carousel__indicators {
     display: flex;
@@ -367,10 +397,28 @@ body {
     to { opacity: 1; }
 }
 
-@keyframes slideInUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
+
+@keyframes slideOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
