@@ -8,12 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
   let carouselInterval;
 
   function showSlide(index) {
-      carouselItems.forEach((item, i) => {
-          item.classList.toggle('active', i === index);
-          indicators[i].classList.toggle('active', i === index);
-      });
+      carouselItems[currentIndex].classList.add('exit'); // Dodaj exit za trenutnu kremu
+      carouselItems[index].classList.add('enter'); // Dodaj enter za novu kremu
+  
+      setTimeout(() => {
+          carouselItems.forEach((item, i) => {
+              item.classList.remove('active', 'enter', 'exit'); // Ukloni sve klase
+              indicators[i].classList.remove('active');
+          });
+          carouselItems[index].classList.add('active'); // Oznaci novu kremu kao aktivnu
+          indicators[index].classList.add('active');
+      }, 800); // Vreme tranzicije mora biti usklađeno sa CSS animacijom
+  
       currentIndex = index;
   }
+
 
   function nextSlide() {
       let nextIndex = (currentIndex + 1) % carouselItems.length;
